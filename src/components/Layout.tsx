@@ -112,6 +112,13 @@ export const Layout = ({ children }: LayoutProps) => {
                 </Link>
               );
             })}
+            <button
+              onClick={() => { setMobileMenuOpen(false); signOut(); }}
+              className="flex items-center gap-3 px-6 py-4 w-full text-left text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all duration-300"
+            >
+              <LogOut className="w-5 h-5" />
+              <span className="font-medium">Sair</span>
+            </button>
           </nav>
         )}
       </header>
