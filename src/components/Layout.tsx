@@ -10,7 +10,8 @@ import {
   Truck,
   Menu,
   X,
-  LogOut
+  LogOut,
+  User
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
@@ -80,13 +81,25 @@ export const Layout = ({ children }: LayoutProps) => {
             </button>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-foreground"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* User Info + Mobile Menu Button */}
+          <div className="flex items-center gap-3">
+            <div className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground">
+              <span className="truncate max-w-[180px]">{user?.email}</span>
+            </div>
+            <button
+              onClick={() => signOut()}
+              className="hidden sm:flex lg:hidden items-center gap-1 px-3 py-1.5 rounded-lg text-sm text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all"
+            >
+              <LogOut className="w-4 h-4" />
+              <span>Sair</span>
+            </button>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 text-foreground"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -112,9 +125,13 @@ export const Layout = ({ children }: LayoutProps) => {
                 </Link>
               );
             })}
+            <div className="flex items-center gap-3 px-6 py-3 border-t border-border/50 text-sm text-muted-foreground">
+              <User className="w-4 h-4" />
+              <span className="truncate">{user?.email}</span>
+            </div>
             <button
               onClick={() => { setMobileMenuOpen(false); signOut(); }}
-              className="flex items-center gap-3 px-6 py-4 w-full text-left text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all duration-300"
+              className="flex items-center gap-3 px-6 py-4 w-full text-left text-destructive hover:bg-destructive/10 transition-all duration-300"
             >
               <LogOut className="w-5 h-5" />
               <span className="font-medium">Sair</span>
