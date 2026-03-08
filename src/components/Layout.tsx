@@ -70,6 +70,14 @@ export const Layout = ({ children }: LayoutProps) => {
                 </Link>
               );
             })}
+            <button
+              onClick={() => signOut()}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all duration-300 ml-2"
+              title="Sair"
+            >
+              <LogOut className="w-4 h-4" />
+              <span>Sair</span>
+            </button>
           </nav>
 
           {/* Mobile Menu Button */}
