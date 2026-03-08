@@ -254,7 +254,7 @@ export const History = () => {
                         record.amount >= 0 ? 'text-accent' : 'text-warning'
                       }`}
                     >
-                      ${Math.abs(record.amount).toFixed(2)}
+                      MZN {Math.abs(record.amount).toFixed(2)}
                     </td>
                     <td className="py-3 px-4 text-right text-muted-foreground">
                       {new Date(record.date).toLocaleDateString('pt-BR')}

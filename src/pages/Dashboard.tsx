@@ -120,7 +120,7 @@ export const Dashboard = () => {
             <div>
               <p className="text-muted-foreground text-sm mb-1">Receita Diária</p>
               <h3 className="text-2xl font-orbitron font-bold text-primary">
-                <AnimatedCounter value={dailyRevenue} prefix="$" decimals={2} />
+                <AnimatedCounter value={dailyRevenue} prefix="MZN " decimals={2} />
               </h3>
             </div>
             <DollarSign className="w-8 h-8 text-primary" />
@@ -132,7 +132,7 @@ export const Dashboard = () => {
             <div>
               <p className="text-muted-foreground text-sm mb-1">Receita Semanal</p>
               <h3 className="text-2xl font-orbitron font-bold text-primary">
-                <AnimatedCounter value={weeklyRevenue} prefix="$" decimals={2} />
+                <AnimatedCounter value={weeklyRevenue} prefix="MZN " decimals={2} />
               </h3>
             </div>
             <TrendingUp className="w-8 h-8 text-primary" />
@@ -144,7 +144,7 @@ export const Dashboard = () => {
             <div>
               <p className="text-muted-foreground text-sm mb-1">Receita Mensal</p>
               <h3 className="text-2xl font-orbitron font-bold text-accent">
-                <AnimatedCounter value={monthlyRevenue} prefix="$" decimals={2} />
+                <AnimatedCounter value={monthlyRevenue} prefix="MZN " decimals={2} />
               </h3>
             </div>
             <TrendingUp className="w-8 h-8 text-accent" />
@@ -160,7 +160,7 @@ export const Dashboard = () => {
             <div>
               <p className="text-muted-foreground text-sm mb-1">Lucro Líquido</p>
               <h3 className={`text-2xl font-orbitron font-bold ${isNegative ? 'text-destructive' : 'text-secondary'}`}>
-                <AnimatedCounter value={netProfit} prefix="$" decimals={2} />
+                <AnimatedCounter value={netProfit} prefix="MZN " decimals={2} />
               </h3>
             </div>
             {isNegative ? (
@@ -179,7 +179,7 @@ export const Dashboard = () => {
             <div>
               <p className="text-muted-foreground text-sm mb-1">Despesas Mensais</p>
               <h3 className="text-2xl font-orbitron font-bold text-warning">
-                <AnimatedCounter value={monthlyExpenses} prefix="$" decimals={2} />
+                <AnimatedCounter value={monthlyExpenses} prefix="MZN " decimals={2} />
               </h3>
             </div>
             <TrendingDown className="w-8 h-8 text-warning" />
@@ -191,7 +191,7 @@ export const Dashboard = () => {
             <div>
               <p className="text-muted-foreground text-sm mb-1">Salários Pagos</p>
               <h3 className="text-2xl font-orbitron font-bold text-secondary">
-                <AnimatedCounter value={monthlySalaries} prefix="$" decimals={2} />
+                <AnimatedCounter value={monthlySalaries} prefix="MZN " decimals={2} />
               </h3>
             </div>
             <Wallet className="w-8 h-8 text-secondary" />
