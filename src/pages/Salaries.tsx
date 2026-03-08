@@ -170,7 +170,7 @@ export const Salaries = () => {
                       >
                         <td className="py-3 px-2 font-medium">{salary.driverName}</td>
                         <td className="py-3 px-2 text-accent font-orbitron">
-                          ${salary.amount.toFixed(2)}
+                          MZN {salary.amount.toFixed(2)}
                         </td>
                         <td className="py-3 px-2 text-muted-foreground">
                           {new Date(salary.paymentDate).toLocaleDateString('pt-BR')}

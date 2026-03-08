@@ -54,7 +54,7 @@ export const Drivers = () => {
                       <span className="text-sm text-muted-foreground">Receitas</span>
                     </div>
                     <span className="font-orbitron font-semibold text-accent">
-                      <AnimatedCounter value={totalRevenue} prefix="$" decimals={2} />
+                      <AnimatedCounter value={totalRevenue} prefix="MZN " decimals={2} />
                     </span>
                   </div>
                   <div className="flex items-center justify-between">
@@ -63,7 +63,7 @@ export const Drivers = () => {
                       <span className="text-sm text-muted-foreground">Despesas</span>
                     </div>
                     <span className="font-orbitron font-semibold text-warning">
-                      <AnimatedCounter value={totalExpenses} prefix="$" decimals={2} />
+                      <AnimatedCounter value={totalExpenses} prefix="MZN " decimals={2} />
                     </span>
                   </div>
                 </div>
