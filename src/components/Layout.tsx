@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { 
   LayoutDashboard, 
   Users, 
-  DollarSign, 
+  Banknote, 
   Receipt, 
   Wallet, 
   History,
@@ -23,7 +23,7 @@ interface LayoutProps {
 const navItems = [
   { path: '/', label: 'Dashboard', icon: LayoutDashboard },
   { path: '/motoristas', label: 'Motoristas', icon: Users },
-  { path: '/receitas', label: 'Receitas', icon: DollarSign },
+  { path: '/receitas', label: 'Receitas', icon: Banknote },
   { path: '/despesas', label: 'Despesas', icon: Receipt },
   { path: '/salarios', label: 'Salários', icon: Wallet },
   { path: '/historico', label: 'Histórico', icon: History },
