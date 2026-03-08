@@ -43,8 +43,7 @@ export const EXPENSE_TYPE_LABELS: Record<ExpenseType, string> = {
 
 export const DRIVERS: Driver[] = [
   { id: '1', name: 'Pompilio', vehicle: 'Nissan Caravan' },
-  { id: '2', name: 'John', vehicle: 'Nissan Caravan' },
-  { id: '3', name: 'Tito', vehicle: 'Hino Ranger' },
+  { id: '2', name: 'Tito', vehicle: 'Nissan Caravan' },
 ];
 
-export const VEHICLES = ['Nissan Caravan', 'Hino Ranger'];
+export const VEHICLES = ['Nissan Caravan'];
