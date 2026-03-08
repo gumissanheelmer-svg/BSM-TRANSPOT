@@ -9,10 +9,12 @@ import {
   History,
   Truck,
   Menu,
-  X
+  X,
+  LogOut
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
+import { useAuth } from '@/hooks/useAuth';
 
 interface LayoutProps {
   children: ReactNode;
@@ -30,6 +32,7 @@ const navItems = [
 export const Layout = ({ children }: LayoutProps) => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { signOut, user } = useAuth();
 
   return (
     <div className="min-h-screen bg-background">
@@ -67,6 +70,14 @@ export const Layout = ({ children }: LayoutProps) => {
                 </Link>
               );
             })}
+            <button
+              onClick={() => signOut()}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all duration-300 ml-2"
+              title="Sair"
+            >
+              <LogOut className="w-4 h-4" />
+              <span>Sair</span>
+            </button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -101,6 +112,13 @@ export const Layout = ({ children }: LayoutProps) => {
                 </Link>
               );
             })}
+            <button
+              onClick={() => { setMobileMenuOpen(false); signOut(); }}
+              className="flex items-center gap-3 px-6 py-4 w-full text-left text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all duration-300"
+            >
+              <LogOut className="w-5 h-5" />
+              <span className="font-medium">Sair</span>
+            </button>
           </nav>
         )}
       </header>
