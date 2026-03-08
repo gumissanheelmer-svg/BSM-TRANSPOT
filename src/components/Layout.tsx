@@ -124,9 +124,13 @@ export const Layout = ({ children }: LayoutProps) => {
                 </Link>
               );
             })}
+            <div className="flex items-center gap-3 px-6 py-3 border-t border-border/50 text-sm text-muted-foreground">
+              <User className="w-4 h-4" />
+              <span className="truncate">{user?.email}</span>
+            </div>
             <button
               onClick={() => { setMobileMenuOpen(false); signOut(); }}
-              className="flex items-center gap-3 px-6 py-4 w-full text-left text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all duration-300"
+              className="flex items-center gap-3 px-6 py-4 w-full text-left text-destructive hover:bg-destructive/10 transition-all duration-300"
             >
               <LogOut className="w-5 h-5" />
               <span className="font-medium">Sair</span>
