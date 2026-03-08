@@ -49,7 +49,7 @@ export const Revenues = () => {
   return (
     <div className="space-y-8">
       <h1 className="text-3xl lg:text-4xl font-orbitron font-bold text-primary neon-text-cyan">
-        Registro de Receitas
+        Receitas
       </h1>
 
       <div className="max-w-xl mx-auto">
@@ -98,7 +98,7 @@ export const Revenues = () => {
               </label>
               <div className="relative">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-accent font-bold">
-                  $
+                  MZN
                 </span>
                 <input
                   type="number"
@@ -107,7 +107,7 @@ export const Revenues = () => {
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
                   placeholder="0.00"
-                  className="w-full pl-8 pr-4 py-3 bg-input border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                  className="w-full pl-14 pr-4 py-3 bg-input border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
                 />
               </div>
             </div>
