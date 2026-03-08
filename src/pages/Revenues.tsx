@@ -93,23 +93,17 @@ export const Revenues = () => {
             {/* Amount */}
             <div className="space-y-2">
               <label className="flex items-center gap-2 text-sm font-medium text-foreground">
-                <DollarSign className="w-4 h-4 text-accent" />
-                Valor da Receita
+                Valor da Receita (MZN)
               </label>
-              <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-accent font-bold">
-                  MZN
-                </span>
-                <input
-                  type="number"
-                  step="0.01"
-                  min="0"
-                  value={amount}
-                  onChange={(e) => setAmount(e.target.value)}
-                  placeholder="0.00"
-                  className="w-full pl-14 pr-4 py-3 bg-input border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                />
-              </div>
+              <input
+                type="number"
+                step="0.01"
+                min="0"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                placeholder="0.00"
+                className="w-full px-4 py-3 bg-input border border-border rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+              />
             </div>
 
             {/* Date */}
