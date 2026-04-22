@@ -107,8 +107,8 @@ const isWithinPeriod = (dateStr: string, period: 'daily' | 'weekly' | 'monthly')
 export const useStore = create<Store>()(
   persist(
     (set, get) => ({
-      revenues: [],
-      expenses: [],
+      revenues: SEED_REVENUES,
+      expenses: SEED_EXPENSES,
       salaries: [],
       drivers: DRIVERS,
 
@@ -180,6 +180,48 @@ export const useStore = create<Store>()(
     }),
     {
       name: 'bsm-transport-storage',
+      version: SEED_VERSION,
+      migrate: (persistedState: any, _version) => {
+        // Garante que registros seed sejam mesclados sem duplicar
+        const state = persistedState ?? {};
+        const existingRevIds = new Set((state.revenues ?? []).map((r: Revenue) => r.id));
+        const existingExpIds = new Set((state.expenses ?? []).map((e: Expense) => e.id));
+
+        const mergedRevenues = [
+          ...(state.revenues ?? []),
+          ...SEED_REVENUES.filter((r) => !existingRevIds.has(r.id)),
+        ];
+        const mergedExpenses = [
+          ...(state.expenses ?? []),
+          ...SEED_EXPENSES.filter((e) => !existingExpIds.has(e.id)),
+        ];
+
+        return {
+          ...state,
+          revenues: mergedRevenues,
+          expenses: mergedExpenses,
+        };
+      },
+      merge: (persistedState: any, currentState) => {
+        const persisted = persistedState ?? {};
+        const existingRevIds = new Set((persisted.revenues ?? []).map((r: Revenue) => r.id));
+        const existingExpIds = new Set((persisted.expenses ?? []).map((e: Expense) => e.id));
+
+        return {
+          ...currentState,
+          ...persisted,
+          revenues: [
+            ...(persisted.revenues ?? []),
+            ...SEED_REVENUES.filter((r) => !existingRevIds.has(r.id)),
+          ],
+          expenses: [
+            ...(persisted.expenses ?? []),
+            ...SEED_EXPENSES.filter((e) => !existingExpIds.has(e.id)),
+          ],
+          salaries: persisted.salaries ?? [],
+          drivers: DRIVERS,
+        };
+      },
     }
   )
 );
